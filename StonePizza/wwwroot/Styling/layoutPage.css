@@ -6,15 +6,18 @@
 #navBar {
     background-color: white !important;
 }
+#navBarContainer {
+    margin: 4px !important;
+}
 
 #jumbotron {
-    margin-top: 100px !important;
+    margin-top: 150px !important;
     margin-bottom: 50px !important;
 }
 
 
 #logo {
-    height: 100% !important;
+    height: 60px !important;
     width: 100px !important;
 }
 
@@ -22,10 +25,7 @@
     margin-left: 15px !important;
 }
 
-.htmlActionLinks {
-    margin-top: 30px !important;
-}
 
-    .htmlActionLinks:hover {
+.nav-link:hover {
         color: dodgerblue !important;
     }

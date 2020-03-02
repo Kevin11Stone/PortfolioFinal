@@ -5,6 +5,11 @@
     <UserSecretsId>aspnet-StonePizza-701C34B5-4D7F-41A2-ADDC-948F9342EB1C</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Styling\homePage.css" />
+    <None Include="wwwroot\Styling\layoutPage.css" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />

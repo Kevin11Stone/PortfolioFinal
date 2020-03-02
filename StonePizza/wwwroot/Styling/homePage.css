@@ -2,6 +2,11 @@
     background-color: dodgerblue !important
 }
 
+#myCarousel {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 #jumbotron {
     margin-top: 150px !important;
     margin-bottom: 50px !important;
@@ -19,4 +24,16 @@
 .carousel-inner > .item > img {
     width: 100% !important;
     height: 500px !important;
+}
+.nav-link:hover {
+    color: dodgerblue ;
+}
+
+.card-deck {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.card-img-top {
+    height: 300px;
 }

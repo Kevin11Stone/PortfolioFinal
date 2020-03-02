@@ -18,7 +18,7 @@
                 <a class="navbar-left" >
                     <img id="logo" alt="Brand" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStUm-Ft25ighHsERsNjIYwo3W1T0a08yYb99jqADGAwVSLcaAX">
                 </a>
-                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                <a class="navbar-brand">
                     Stone Pizza
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -35,9 +35,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
                 
-                    <partial name="_LoginPartial" />
+                    
                
                 
             </div>

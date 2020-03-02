@@ -26,6 +26,12 @@
 }
 
 
-.nav-link:hover {
-        color: dodgerblue !important;
+.nav-item:hover {
+        background-color: dodgerblue !important;
     }
+
+
+.nav-item {
+    padding-left: 20px;
+    padding-right: 20px;
+}

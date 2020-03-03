@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace StonePizza.Models
 {
-    interface IMenuItem
+    public interface IMenuItem
     {
 
 
@@ -13,5 +13,7 @@ namespace StonePizza.Models
         string ItemName { get; set; }
 
         decimal ItemPrice { get; set; }
+
+     
     }
 }

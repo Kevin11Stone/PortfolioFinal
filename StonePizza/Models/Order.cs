@@ -8,54 +8,42 @@ namespace StonePizza.Models
 {
     public class Order
     {
-        //public Order()
-        //{
-        //    this.OrderItems = new List<IMenuItem>();
-        //}
+        
+        public Order()
+        {
+            this.orderItems = new List<IMenuItem>();
+        }
 
-        //[Key]
-        //public int OrderId { get; set; }
+        [Key]
+        public int OrderId { get; set; }
 
-        ///// <summary>
-        ///// The total of every menu item's price in the order items list.
-        ///// </summary>
-        //public decimal TotalPrice
-        //{
-        //    get
-        //    {
-        //        decimal total = 0;
-        //        foreach (IMenuItem item in this.OrderItems)
-        //        {
-        //            total += item.GetItemPrice();
-        //        }
-        //        return total;
-        //    }
-        //    set
-        //    {
-        //        TotalPrice = value;
-        //    }
-        //}
+        /// <summary>
+        /// The name of the user that places the order
+        /// </summary>
+        public string NameOnOrder { get; set; }
+        
+        /// <summary>
+        /// The total of every menu item's price in the order items list.
+        /// </summary>
+        public decimal TotalPrice
+        {
+            get
+            {
+                decimal total = 0;
+                foreach (IMenuItem item in this.orderItems)
+                {
+                    total += item.ItemPrice;
+                }
+                return total;
+            }
+            set
+            {
+                TotalPrice = value;
+            }
+        }
 
-        ///// <summary>
-        ///// List of items in a given order.
-        ///// </summary>
-        //public ICollection<IMenuItem> OrderItems { get; set; }
-
-        ///// <summary>
-        ///// The member to reward points after completion of order.
-        ///// </summary>
-        //public ApplicationUser Member { get; set; }
-
-
-        ///// <summary>
-        ///// Adds menu item to order list and 
-        ///// adds the price of the item to the order's total price.
-        ///// </summary>
-        ///// <param name="menuItem">The menu item to add the order</param>
-        //public void AddItemToOrder(IMenuItem menuItem)
-        //{
-        //    this.OrderItems.Add(menuItem);
-        //    this.TotalPrice += menuItem.GetItemPrice();
-        //}
+        private  List<IMenuItem> orderItems { get; set; }
+       
+       
     }
 }

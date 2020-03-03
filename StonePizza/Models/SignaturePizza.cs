@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace StonePizza.Models
 {
-    public class SignaturePizza
+    public class SignaturePizza : IMenuItem
     {
-        /// <summary>
-        /// Fixed price for a single SignaturePizza 
-        /// </summary>
-        private decimal ItemPrice = 15.00m;
 
         public SignaturePizza()
         {
@@ -19,17 +15,15 @@ namespace StonePizza.Models
         }
         [Key]
         public int PizzaId { get; set; }
-        public string PizzaName { get; set; }
+        public string ItemName { get; set; }
         public string PizzaDescription { get; set; }
 
         /// <summary>
         /// Returns fixed decimal price of single SignaturePizza
         /// </summary>
         /// <returns></returns>
-        public decimal GetItemPrice()
-        {
-            return ItemPrice;
-        }
+        public decimal ItemPrice { get; set; }
+
 
         /// <summary>
         /// Returns the name of the item
@@ -37,7 +31,7 @@ namespace StonePizza.Models
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{PizzaName}";
+            return $"{ItemName}";
         }
 
 

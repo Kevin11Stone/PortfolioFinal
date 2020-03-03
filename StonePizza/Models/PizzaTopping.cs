@@ -10,11 +10,20 @@ namespace StonePizza.Models
        
         private decimal ToppingPrice = .25m;
 
+        public PizzaTopping(string name)
+        {
+            ToppingName = name;
+        }
+
         [Key]
         public int ToppingId { get; set; }
         public string ToppingName { get; set; }
         public decimal GetToppingPrice() { 
             return ToppingPrice;
         }
+
+
     }
+
+
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StonePizza.Models
 {
-    public class CustomPizza
+    public class CustomPizza : IMenuItem
     {
+        private decimal CustomPizzaPrice = 14.00m;
         private string defaultCustomPizzaName = "Custom Pizza";
       
 
@@ -21,28 +22,53 @@ namespace StonePizza.Models
         /// <summary>
         /// Returns default name for custom pizzas
         /// </summary>
-        public string GetName()
+        public string ItemName
         {
-            return defaultCustomPizzaName;
+            get
+            {
+                return defaultCustomPizzaName;
+            }
+            set
+            {
+                value = defaultCustomPizzaName;
+            }
         }
         public string ItemDescription { get; set; }
-        //public decimal ItemPrice { 
-        //    get
-        //    {
-        //        decimal total = 14.00m;
-        //        foreach (var t in this.CustomPizzaToppings)
-        //        {
-        //            total += t
-        //        }
-                    
-        //    }
-        //}
+
+        /// <summary>
+        /// Returns CustomPizza base price plus toppings 
+        /// </summary>
+        public decimal GetItemPrice()
+        {
+            decimal total = CustomPizzaPrice;
+            foreach (var t in this.CustomPizzaToppings)
+            {
+                total += t.GetToppingPrice();
+            }
+            return total;
+
+        }
+
+        public decimal ItemPrice
+        {
+            get
+            {
+                return GetItemPrice();
+            }
+            set
+            {
+                value = ItemPrice;
+            }
+        }
+
+
+
         public string PizzaSauce { get; set; }
         public string PizzaCrust { get; set; }
         public string PizzaCheese { get; set; }
 
         /// <summary>
-        /// Pizza toppings added to a custom pizza.
+        /// Pizza toppings added to a custom pizza
         /// </summary>
         public List<PizzaTopping> CustomPizzaToppings { get; set; }
 

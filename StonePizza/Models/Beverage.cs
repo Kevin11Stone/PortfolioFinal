@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace StonePizza.Models
 {
-    public class Beverage
+    public class Beverage : IMenuItem
     {
         [Key]
         public int BeverageId { get; set; }
-        public string BeverageName { get; set; }
+        public string ItemName { get; set; }
         public string BeverageDescription { get; set; }
         public decimal ItemPrice { get; set; }
         /// <summary>
@@ -19,7 +19,7 @@ namespace StonePizza.Models
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{BeverageName}";
+            return $"{ItemName}";
         }
     }
 }

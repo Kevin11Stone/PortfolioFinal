@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace StonePizza.Models
 {
-    public class SideDish
+    public class SideDish : IMenuItem
     {
         [Key]
         public int SideDishId { get; set; }
-        public string SideDishName { get; set; }
+        public string ItemName { get; set; }
         public string SideDishDescription { get; set; }
         public string Category { get; set; }
         public decimal ItemPrice { get; set; }
+
         /// <summary>
         /// Returns the name of the item
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{SideDishName}";
+            return $"{ItemName}";
         }
     }
 }

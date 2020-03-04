@@ -16,6 +16,7 @@ namespace StonePizza.Models
             this.Toppings = new List<string>();
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PizzaId { get; set; }
         public string ItemName { get; set; }
         public string PizzaDescription { get; set; }

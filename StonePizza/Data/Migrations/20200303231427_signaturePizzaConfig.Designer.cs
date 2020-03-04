@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StonePizza.Data;
 
 namespace StonePizza.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200303231427_signaturePizzaConfig")]
+    partial class signaturePizzaConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,36 +240,6 @@ namespace StonePizza.Data.Migrations
                     b.HasKey("BeverageId");
 
                     b.ToTable("Beverages");
-
-                    b.HasData(
-                        new
-                        {
-                            BeverageId = 4,
-                            BeverageDescription = "Carbonated soft drink product from major company",
-                            ItemName = "Fountain drink",
-                            ItemPrice = 1.50m
-                        },
-                        new
-                        {
-                            BeverageId = 99,
-                            BeverageDescription = "Locally brewed craft beer",
-                            ItemName = "Beer",
-                            ItemPrice = 5.50m
-                        },
-                        new
-                        {
-                            BeverageId = 95,
-                            BeverageDescription = "Bottled water",
-                            ItemName = "Water",
-                            ItemPrice = 1.20m
-                        },
-                        new
-                        {
-                            BeverageId = 66,
-                            BeverageDescription = "Electrolyte-rich soft drink",
-                            ItemName = "Sports drink",
-                            ItemPrice = 2.50m
-                        });
                 });
 
             modelBuilder.Entity("StonePizza.Models.CustomPizza", b =>
@@ -360,64 +332,6 @@ namespace StonePizza.Data.Migrations
                     b.HasKey("SideDishId");
 
                     b.ToTable("SideDishes");
-
-                    b.HasData(
-                        new
-                        {
-                            SideDishId = 86,
-                            Category = "Breadsticks",
-                            ItemName = "Breadsticks",
-                            ItemPrice = 6.99m,
-                            SideDishDescription = "Garlic parmesan butter breadsticks"
-                        },
-                        new
-                        {
-                            SideDishId = 69,
-                            Category = "Salads",
-                            ItemName = "Chef Salad",
-                            ItemPrice = 4.99m,
-                            SideDishDescription = "Romaine, bacon, red onion, grape tomato, goat cheese, blue cheese dressing"
-                        },
-                        new
-                        {
-                            SideDishId = 42,
-                            Category = "Salads",
-                            ItemName = "Classic Chicken Caesar",
-                            ItemPrice = 4.99m,
-                            SideDishDescription = "Romaine, all-natural chicken breast, parmesan, crouton, caesar dressing"
-                        },
-                        new
-                        {
-                            SideDishId = 85,
-                            Category = "Salads",
-                            ItemName = "Chopped Antipasto",
-                            ItemPrice = 4.99m,
-                            SideDishDescription = "Romaine, pepperoni, mozzarella, grape tomato, black olive, banana pepper, red onion, red wine vinegar and olive oil vinagrette"
-                        },
-                        new
-                        {
-                            SideDishId = 98,
-                            Category = "Salads",
-                            ItemName = "Bacon & Blu",
-                            ItemPrice = 4.99m,
-                            SideDishDescription = "Romaine, bacon, red onion, grape tomato, goat cheese, blue cheese dressing"
-                        },
-                        new
-                        {
-                            SideDishId = 25,
-                            Category = "Chicken Wings",
-                            ItemName = "Buffalo Chicken Wings",
-                            ItemPrice = 7.50m,
-                            SideDishDescription = "12 bone-in hot wings doused with Buffalo sauce"
-                        },
-                        new
-                        {
-                            SideDishId = 7,
-                            Category = "Chicken Wings",
-                            ItemName = "BBQ Chicken Wings",
-                            ItemPrice = 7.50m,
-                            SideDishDescription = "12 bone-in chicken wings doused with BBQ sauce"
-                        });
                 });
 
             modelBuilder.Entity("StonePizza.Models.SignaturePizza", b =>
@@ -452,7 +366,7 @@ namespace StonePizza.Data.Migrations
                     b.HasData(
                         new
                         {
-                            PizzaId = 61,
+                            PizzaId = 1,
                             ItemName = "The James Brown",
                             ItemPrice = 14.00m,
                             PizzaCheese = "Mozzarella",
@@ -462,7 +376,7 @@ namespace StonePizza.Data.Migrations
                         },
                         new
                         {
-                            PizzaId = 18,
+                            PizzaId = 2,
                             ItemName = "The Ray Charles",
                             ItemPrice = 14.50m,
                             PizzaCheese = "Mozzarella",

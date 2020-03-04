@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace StonePizza.Models
@@ -11,9 +13,10 @@ namespace StonePizza.Models
 
         public SignaturePizza()
         {
-            this.Toppings = new List<PizzaTopping>();
+            this.Toppings = new List<string>();
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PizzaId { get; set; }
         public string ItemName { get; set; }
         public string PizzaDescription { get; set; }
@@ -43,7 +46,22 @@ namespace StonePizza.Models
         /// <summary>
         /// List of all toppings on the signature pizza.
         /// </summary>
-        public List<PizzaTopping> Toppings { get; set; }
+        [NotMapped]
+        public List<string> Toppings { get; set; }
+
+        public string GetToppings()
+        {
+            string space = ", ";
+            var listOfToppings = new StringBuilder();
+
+            listOfToppings.Append(this.Toppings[0]);
+            for (int i = 1; i < this.Toppings.Count(); i++)
+            {
+                listOfToppings.Append(space);
+                listOfToppings.Append(this.Toppings[i]);
+            }
+            return listOfToppings.ToString();
+        }
 
     }
 }

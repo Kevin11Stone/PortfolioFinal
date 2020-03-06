@@ -23,12 +23,18 @@
                 margin-bottom: 50px;
             }
             #sideDishTable {
+                margin-bottom: 50px;
+            }
+            #beverageTable {
                 margin-bottom: 100px;
             }
-
             .carousel {
                 height: auto !important;
                 width: auto !important;
+            }
+            #carouselImage {
+                margin: 30px !important;
+                margin-right: 0px !important;
             }
 
             #myCarousel {
@@ -59,10 +65,10 @@
     <div class="carousel-inner">
 
         <div class="item active">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSR2vFUqAkLsSDgHyxjG0IOMrivEoL2EbnmVvhAF3JqBtIxfiZs" />
+            <img id="carouselImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSR2vFUqAkLsSDgHyxjG0IOMrivEoL2EbnmVvhAF3JqBtIxfiZs" />
             <div class="carousel-caption d-none d-md-block">
 
-                <h1> Stone's Signature Pizzas</h1>
+                <h1 class="carouselText"> Stone's Signature Pizzas</h1>
             </div>
         </div>
 
@@ -70,10 +76,10 @@
         @foreach (var item in Model.SignaturePizzas)
         {
             <div class="item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSR2vFUqAkLsSDgHyxjG0IOMrivEoL2EbnmVvhAF3JqBtIxfiZs" />
+                <img id="carouselImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSR2vFUqAkLsSDgHyxjG0IOMrivEoL2EbnmVvhAF3JqBtIxfiZs" />
                 <div class="carousel-caption d-none d-md-block">
-                    <h2>@item.ItemName</h2>
-                    <h3>@item.PizzaDescription</h3>
+                    <h2 class="carouselText">@item.ItemName</h2>
+                    <h3 class="carouselText">@item.PizzaDescription</h3>
                 </div>
             </div>
         }
@@ -189,6 +195,45 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+
+<h1>
+    Beverages
+</h1>
+<table id="beverageTable" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Beverages[0].ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beverages[0].BeverageDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beverages[0].ItemPrice)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Beverages)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeverageDescription)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.ItemPrice)
             </td>
 
 

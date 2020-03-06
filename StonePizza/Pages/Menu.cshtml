@@ -19,6 +19,12 @@
             .table {
                 background-color: whitesmoke !important;
             }
+            #signaturePizzaTable {
+                margin-bottom: 50px;
+            }
+            #sideDishTable {
+                margin-bottom: 100px;
+            }
 
             .carousel {
                 height: auto !important;
@@ -32,7 +38,9 @@
         </style>
 
     </head>
-<h1>Menu</h1>
+
+
+<h1>Stone Pizza Menu</h1>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -83,7 +91,11 @@
     </a>
 </div>
 
-<table class="table">
+<h1>
+    Signature Pizzas
+</h1>
+
+<table id="signaturePizzaTable" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.SignaturePizzas[0].ItemName)
@@ -136,6 +148,51 @@
     </td>
 
 </tr>
+    }
+
+</table>
+
+
+<h1>
+    Side Dishes
+</h1>
+<table id="sideDishTable" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SideDishes[0].ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SideDishes[0].SideDishDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SideDishes[0].ItemPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SideDishes[0].Category)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.SideDishes)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SideDishDescription)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.ItemPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+
+
+        </tr>
     }
 
 </table>

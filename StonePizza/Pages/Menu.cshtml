@@ -1,0 +1,64 @@
+﻿@page
+@model StonePizza.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>Menu</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].PizzaDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].Toppings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].ItemPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].PizzaSauce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].PizzaCrust)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].PizzaCheese)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.SignaturePizzas)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ItemName)
+    </td>
+    <td>
+        @Html.DisplayName(item.PizzaDescription)
+    </td>
+    <td>
+        @Html.DisplayName(item.GetToppings())
+    </td>
+    <td>
+        $@Html.DisplayFor(modelItem => item.ItemPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PizzaSauce)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PizzaCrust)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PizzaCheese)
+    </td>
+
+</tr>
+    }
+
+</table>

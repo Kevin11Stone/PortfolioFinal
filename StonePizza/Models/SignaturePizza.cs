@@ -18,13 +18,17 @@ namespace StonePizza.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PizzaId { get; set; }
+
+        [Display(Name = "Name")]
         public string ItemName { get; set; }
+        [Display(Name = "Description")]
         public string PizzaDescription { get; set; }
 
         /// <summary>
         /// Returns fixed decimal price of single SignaturePizza
         /// </summary>
         /// <returns></returns>
+        [Display(Name = "Price")]
         public decimal ItemPrice { get; set; }
 
 
@@ -39,14 +43,18 @@ namespace StonePizza.Models
 
 
         // Signature pizza properties
+        [Display(Name = "Sauce")]
         public string PizzaSauce { get; set; }
+        [Display(Name = "Crust")]
         public string PizzaCrust { get; set; }
+        [Display(Name = "Cheese")]
         public string PizzaCheese { get; set; }
 
         /// <summary>
         /// List of all toppings on the signature pizza.
         /// </summary>
         [NotMapped]
+        [Display(Name = "Toppings")]
         public List<string> Toppings { get; set; }
 
         public string GetToppings()

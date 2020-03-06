@@ -7,12 +7,12 @@
 <h1>Menu</h1>
 
 <table class="table">
-    @*<tr>
+    <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SignaturePizzas)
+            @Html.DisplayNameFor(model => model.SignaturePizzas[0].ItemName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Toppings)
+        @*<th>
+            @Html.DisplayNameFor(model => model.)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ItemPrice)
@@ -25,9 +25,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PizzaCheese)
-        </th>
+        </th>*@
         <th></th>
-    </tr>*@
+    </tr>
 
     @foreach (var item in Model.SignaturePizzas)
     {

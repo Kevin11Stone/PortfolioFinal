@@ -19,14 +19,16 @@ namespace StonePizza.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PizzaId { get; set; }
 
-        [Display(Name = "Item Name")]
+        [Display(Name = "Name")]
         public string ItemName { get; set; }
+        [Display(Name = "Description")]
         public string PizzaDescription { get; set; }
 
         /// <summary>
         /// Returns fixed decimal price of single SignaturePizza
         /// </summary>
         /// <returns></returns>
+        [Display(Name = "Price")]
         public decimal ItemPrice { get; set; }
 
 

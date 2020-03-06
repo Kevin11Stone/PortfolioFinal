@@ -6,3 +6,52 @@
 
 <h1>Menu</h1>
 
+<table class="table">
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SignaturePizzas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Toppings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PizzaSauce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PizzaCrust)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PizzaCheese)
+        </th>
+        <th></th>
+    </tr>*@
+
+    @foreach (var item in Model.SignaturePizzas)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayName(item.GetToppings())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaSauce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaCrust)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaCheese)
+            </td>
+
+        </tr>
+    }
+
+</table>

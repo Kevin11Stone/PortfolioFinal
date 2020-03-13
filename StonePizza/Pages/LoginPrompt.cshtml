@@ -1,0 +1,37 @@
+﻿@page
+@model StonePizza.Pages.LoginPromptModel
+@{
+    ViewData["Title"] = "LoginPrompt";
+}
+<head>
+
+    <style>
+        #loginLink:hover {
+            color: yellow !important;
+        }
+
+        #loginLink {
+            margin-top: 100px;
+            margin-bottom:100px;
+        }
+        #logoPic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px !important;
+            width:50% !important;
+            height:300px !important;
+        }
+  
+    </style>
+
+</head>
+<img id="logoPic" alt="Brand" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcStUm-Ft25ighHsERsNjIYwo3W1T0a08yYb99jqADGAwVSLcaAX">
+
+
+<h1 align="center"><a id="loginLink" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Let's login first!</a></h1>
+
+<h2 align="center">
+    <a id="loginLink" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Once logged in, you'll be redirected to the home page.</a>
+</h2>
+

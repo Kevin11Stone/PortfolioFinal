@@ -9,8 +9,13 @@ namespace StonePizza.Pages.Shared
 {
     public class OrderModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToPage("LoginPrompt");
+            }
+            return Page();
 
         }
     }

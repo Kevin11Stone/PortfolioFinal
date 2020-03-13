@@ -4,18 +4,9 @@
     ViewData["Title"] = "Order";
 }
 
-<head>
 
-    <style>
-        #loginLink:hover {
-            color:yellow !important;
-        }
-    </style>
-</head>
 
-@if (!User.Identity.IsAuthenticated)
-{
-    <h1 ><a id="loginLink" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Let's login so we can order!</a></h1>
-}
-
+    <h1>
+        Let's Place An Order!
+    </h1>
 

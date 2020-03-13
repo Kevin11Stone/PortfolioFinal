@@ -35,7 +35,7 @@ namespace StonePizza.Pages
                     PizzaCrust = "Traditional",
                     Toppings = new List<string>()
                     {
-                        "Pepporoni",
+                        "Pepperoni",
                         "Sausage",
                         "Ham",
                         "Bacon",

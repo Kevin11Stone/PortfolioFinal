@@ -10,9 +10,16 @@ namespace StonePizza.Models
     {
         [Key]
         public int SideDishId { get; set; }
+
+        [Display(Name = "Name")]
         public string ItemName { get; set; }
+
+        [Display(Name = "Description")]
         public string SideDishDescription { get; set; }
+
         public string Category { get; set; }
+
+        [Display(Name = "Price")]
         public decimal ItemPrice { get; set; }
 
         /// <summary>

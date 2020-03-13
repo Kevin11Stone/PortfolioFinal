@@ -44,7 +44,7 @@ namespace StonePizza.Data
                     PizzaCrust = "Traditional",
                     Toppings = new List<string>()
                     {
-                        "Pepporoni",
+                        "Pepperoni",
                         "Sausage",
                         "Ham",
                         "Bacon",

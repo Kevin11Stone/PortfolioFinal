@@ -191,7 +191,10 @@ namespace StonePizza.Pages.Shared
             };
         }
 
+        public void AddToOrder()
+        {
 
+        }
 
     }
 }

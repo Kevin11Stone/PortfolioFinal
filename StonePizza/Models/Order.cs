@@ -42,7 +42,7 @@ namespace StonePizza.Models
             }
         }
 
-        private  List<IMenuItem> orderItems { get; set; }
+        public List<IMenuItem> orderItems { get; set; }
        
        
     }

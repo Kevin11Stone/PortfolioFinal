@@ -6,12 +6,22 @@
 
 
 
-    <h1>
-        Let's Place An Order!
-    </h1>
+<h1>
+    Let's Place An Order!
+</h1>
 
 
 <h2>
     My current order price total: $@Model.CurrentOrder.TotalPrice
 </h2>
+
+<select class="custom-select custom-select-lg mb-3">
+    <option selected>Signature Pizzas</option>
+    @foreach (var SignaturePizza in Model.SignaturePizzas)
+    {
+        <option value="@SignaturePizza.ItemPrice" >@SignaturePizza.ItemName - $@SignaturePizza.ItemPrice</option>       
+    }
+    
+
+</select>
 
